@@ -1,0 +1,24 @@
+// returning an array where even nos are at even place and odd nos are at odd place in an array 
+
+public int[] sortArray(int[]nums){
+    int n=nums.length;
+    int even=0;
+    int odd=1;
+
+    while(even<n && odd<n){
+        if(nums[even]%2==0){
+            even+=2;
+        }
+        else if(nums[odd]%2==1){
+            odd+=2;
+        }
+        else{
+            int temp=nums[even];
+            nums[even]=nums[odd];
+            nums[odd]=temp;
+            even+=2;
+            odd+=2;
+        }
+    }
+    return nums;
+}
